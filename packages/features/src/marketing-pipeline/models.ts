@@ -10,7 +10,7 @@ import type { AIModelType } from "@launchstack/core/llm";
 export const MARKETING_MODELS = {
   dnaExtraction: "gpt-5-nano" as AIModelType,
   competitorAnalysis: "gpt-5-nano" as AIModelType,
-  strategyBuilding: "gpt-5-nano" as AIModelType,
+  strategyBuilding: "gpt-4o" as AIModelType,
   contentGeneration: "gpt-4o" as AIModelType,
   claimVerification: "gpt-5-nano" as AIModelType,
   refinement: "gpt-4o" as AIModelType,
