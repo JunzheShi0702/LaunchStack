@@ -225,8 +225,7 @@ export const PLATFORM_OPTIONS: PlatformOption[] = [
     subtitle: "Community-first threads",
     bestFor: "Developer communities, authentic discussion",
     charLimit: "~10,000 chars",
-    logoText: "reddit",
-    logoImg: REDDIT_SNOO_URL,
+    logoText: "R",
     placeholder: "What do you want to share or discuss with the Reddit community?",
     promptTemplates: [
       "Share how we solved a common pain point in our industry",

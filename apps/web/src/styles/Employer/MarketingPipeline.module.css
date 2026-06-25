@@ -389,7 +389,6 @@
 .platformLogoLinkedin { background: #0a66c2; }
 .platformLogoBluesky { background: #0085ff; }
 
-.platformLogoImgContainer.platformLogoReddit { background: transparent; }
 .platformLogoImgContainer { overflow: visible; }
 
 .platformCard .platformLogoImgContainer {

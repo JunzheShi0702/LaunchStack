@@ -29,7 +29,6 @@ import styles from "~/styles/Employer/MarketingPipeline.module.css";
 import {
   PIPELINE_STEP_ORDER,
   PLATFORM_OPTIONS,
-  REDDIT_SNOO_URL,
   type ClaimSourceUI,
   type ContentType,
   type FormalityLevel,
@@ -1361,13 +1360,7 @@ export function MarketingPipelineWorkspace({
                               }`}
                             >
                               {result.platform === "reddit" ? (
-                                <Image
-                                  src={REDDIT_SNOO_URL}
-                                  alt=""
-                                  width={18}
-                                  height={18}
-                                  className={styles.platformPreviewBadgeImg}
-                                />
+                                "R"
                               ) : result.platform === "x" ? (
                                 "𝕏"
                               ) : result.platform === "linkedin" ? (
