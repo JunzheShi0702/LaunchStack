@@ -12,6 +12,6 @@ export const MARKETING_MODELS = {
   competitorAnalysis: "gpt-5-nano" as AIModelType,
   strategyBuilding: "gpt-4o" as AIModelType,
   contentGeneration: "gpt-4o" as AIModelType,
-  claimVerification: "gpt-5-nano" as AIModelType,
+  claimVerification: "gpt-4o" as AIModelType,
   refinement: "gpt-4o" as AIModelType,
 } as const;

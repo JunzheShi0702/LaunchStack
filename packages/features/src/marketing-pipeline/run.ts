@@ -408,10 +408,16 @@ export async function runMarketingPipeline(args: {
   const t6 = Date.now();
   emitStart("verifying-claims");
   try {
-    claimSources = await verifyClaimSources({
-      companyId: args.companyId,
-      message: bestVariant.message,
-    });
+    const CLAIM_TIMEOUT_MS = 25_000;
+    claimSources = await Promise.race([
+      verifyClaimSources({
+        companyId: args.companyId,
+        message: bestVariant.message,
+      }),
+      new Promise<ClaimSource[]>((_, reject) =>
+        setTimeout(() => reject(new Error("Claim verification timed out")), CLAIM_TIMEOUT_MS),
+      ),
+    ]);
     const verified = claimSources.filter((c) => c.confidence > 0.5).length;
     emitComplete("verifying-claims", t6,
       `${claimSources.length} claim${claimSources.length !== 1 ? "s" : ""}, ${verified} verified`,
