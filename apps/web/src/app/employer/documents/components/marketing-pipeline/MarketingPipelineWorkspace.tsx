@@ -120,7 +120,14 @@ function StepDataPreview({ data }: { data: Record<string, unknown> }) {
       {entries.map(([key, value]) => {
         const displayValue = Array.isArray(value)
           ? value.length <= 4
-            ? value.map((v) => (typeof v === "object" && v !== null && "name" in v) ? (v as { name: string }).name : String(v)).join(", ")
+            ? value.map((v) => {
+                if (typeof v !== "object" || v === null) return String(v);
+                if ("name" in v) return (v as { name: string }).name;
+                if ("title" in v) return (v as { title: string }).title;
+                if ("label" in v) return (v as { label: string }).label;
+                if ("angle" in v) return (v as { angle: string }).angle;
+                return JSON.stringify(v).slice(0, 60);
+              }).join(", ")
             : `${value.length} items`
           : typeof value === "object" && value !== null
             ? JSON.stringify(value).slice(0, 100)
